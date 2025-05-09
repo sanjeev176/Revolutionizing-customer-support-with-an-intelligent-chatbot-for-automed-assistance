@@ -1,0 +1,21 @@
+# Simple chatbot interaction using input()
+
+def simple_bot_response(user_message):
+    if "order" in user_message.lower():
+        return "Sure, I can help you with your order. Can you provide your order number?"
+    elif "refund" in user_message.lower():
+        return "I’m sorry to hear that. I can assist with refunds. When did you make the purchase?"
+    elif user_message.lower() in ["hi", "hello"]:
+        return "Hello! How can I assist you today?"
+    else:
+        return "I'm here to help with orders, refunds, and general support. What can I assist you with?"
+
+# Chat loop
+print("Welcome to the Customer Support Chatbot! (Type 'exit' to quit)")
+while True:
+    user_input = input("You: ")
+    if user_input.lower() == "exit":
+        print("Bot: Thank you for chatting. Goodbye!")
+        break
+    bot_reply = simple_bot_response(user_input)
+    print("Bot:", bot_reply)
